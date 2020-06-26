@@ -2,7 +2,7 @@
 
 It has become clear that there is potential for videos and images to be corrupted on the camera for whatever reason (stitching issues, heat issue, etc)
 
-We can extract these when breaking videos into frames using ffmpeg https://github.com/trek-view/geovideo-to-geoframes/issues/2
+We can extract these when breaking videos into frames using ffmpeg.
 
 However, if user uploading timelapse photos, this check is not performed.
 
