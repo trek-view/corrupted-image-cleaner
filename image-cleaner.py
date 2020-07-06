@@ -17,7 +17,7 @@ def checkImage(image_file):
     out, err = proc.communicate()
     exitcode = proc.returncode
     try:
-        return exitcode, float(out), err
+        return exitcode, float(out.decode('utf-8').replace("\"", "")), err
     except:
         return 1, 0, err
 
