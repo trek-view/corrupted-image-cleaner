@@ -17,7 +17,7 @@ def checkImage(image_file):
     out, err = proc.communicate()
     exitcode = proc.returncode
     try:
-        return exitcode, float(out), err
+        return exitcode, float(out.decode('utf-8').replace("\"", "")), err
     except:
         return 1, 0, err
 
@@ -46,7 +46,7 @@ def main(argv):
         code, output, error = checkImage(image_file)
         if str(code) != "0"\
                 or (error and str(error, "utf-8") != "") \
-                or (output <= min_range and output >= max_range):
+                or (output <= min_range or output >= max_range):
             print("ERROR " + image_file)
         else:
             print("OK " + image_file)
